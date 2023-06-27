@@ -1,0 +1,75 @@
+<table id="product-table" class="product-table">
+  <tr class="product-table-headers">
+    <th>NOME COMPRADOR</th>
+    <th>VALOR</th>
+    <th>STATUS</th>
+    <th>TELEFONE</th>
+    <th>DATA PEDIDO</th>
+    <th>EDITAR</th>
+  </tr>
+ <tr class="product-table-items" *ngFor="let order of ordersArray; index as i;">
+  <td>
+    <p>{{order.buyerName}}</p>
+  </td>
+  <td>
+    <p>{{order.orderValue}}</p>
+  </td>
+  <td>
+    <p>{{order.orderStatus}}</p>
+  </td>
+  <td>
+    <p>{{order.buyerPhone}}</p>
+  </td>
+  <td>
+    <p>{{order.formattedDate}}</p>
+  </td>
+  <td>
+    <button *ngIf="order.orderStatus == 'DONE'" class="disabled-btn">EDITAR</button>
+
+    <button (click)="updateOrder(i)" *ngIf="order.orderStatus != 'DONE' disabled">EDITAR</button>
+  </td>
+
+ </tr>
+
+</table>
+
+<ng-container *ngIf="openModal">
+<div class="modal">
+  <h2>Editar pedido</h2>
+  <form [formGroup]="updateOrderForm" (ngSubmit)="onSubmit()">
+
+
+    <label for="buyerNameModal">NOME COMPRADOR</label>
+    <input type="text" name="buyerNameModal" id="buyerNameModalId" value="" formControlName="nameModal">
+    <br>
+
+    <label for="valueModal">VALOR</label>
+    <input type="text" name="valueModal" id="valueModalId" value="" formControlName="valueModal">
+    <br>
+
+    <label for="statusModal">STATUS</label>
+    <select name="statusModal" id="statusModalId" value="" formControlName="statusModal">
+      <option value="ORDERED">ORDERED</option>
+      <option value="PENDING">PENDING</option>
+      <option value="DONE">DONE</option>
+    </select>
+
+    <br>
+
+    <label for="phoneModal">TELEFONE</label>
+    <input type="text" name="statusModal" id="phoneModalId" value="" formControlName="phoneModal">
+    <br>
+
+    <label for="dateModal">DATA ATUALIZAÇÃO</label>
+    <input type="text" name="dateModal" id="dateModalId" value="" formControlName="dateModal">
+    <br>
+
+    <div class="btn-modal-div">
+      <button type="submit" (click)="onSubmit()">Atualizar</button>
+      <button type="button" (click)="toggleModal()">Fechar</button>
+    </div>
+
+  </form>
+</div>
+<div class="overlay"></div>
+</ng-container>

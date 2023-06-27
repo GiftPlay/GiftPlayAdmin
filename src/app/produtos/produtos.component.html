@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="upper">
+    <button>Adicionar Produtos <fa-icon [icon]="faPlus"></fa-icon></button>
+    <div class="search-box">
+      <fa-icon [icon]="faSearch"></fa-icon>
+      <input type="text" name="procurar-produtos" id="procurar-produtos" placeholder="Localizar por...">
+    </div>
+  </div>
+
+  <table id="product-table" class="product-table">
+    <tr class="product-table-headers">
+      <th style="flex: 2;">PRODUTOS</th>
+      <th style="flex: 1;">MARCA</th>
+      <th style="flex: 1;">ESTOQUE(UNI)</th>
+      <th style="flex: 1;">PREÇO(R$)</th>
+      <th style="flex: 1;"></th>
+    </tr>
+   <tr class="product-table-items" *ngFor="let item of itemsArray; index as i;">
+    <td>
+      <img src="{{item.image}}" alt="image of item"/>
+      <p>{{item.company}}</p>
+    </td>
+    <td>
+      <p>{{item.company}}</p>
+    </td>
+    <td>
+      <p>{{item.id * 19}}</p>
+    </td>
+    <td>
+      <p>{{item.price}}</p>
+    </td>
+    <td>
+      <button (click)="editItem(i)">EDITAR</button>
+    </td>
+
+   </tr>
+
+  </table>
+</div>

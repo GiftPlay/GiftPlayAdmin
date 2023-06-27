@@ -1,0 +1,157 @@
+.product-table {
+  border-radius: 4px;
+  background: #FFF;
+  padding: 14px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.product-table-headers {
+  width: 95vw;
+  color: #797979;
+  font-size: 16px;
+  font-family: Nunito, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  border-bottom: 4px solid #D9D9D9;
+  display: flex;
+}
+
+.product-table tr th {
+  flex: 1;
+}
+
+.product-table tr td {
+  flex: 1;
+}
+
+.product-table-items {
+  border-bottom: 4px solid #D9D9D9;
+  display: flex;
+
+}
+
+.product-table-items td {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #000;
+  font-size: 16px;
+  font-family: Nunito;
+}
+
+.product-table-items td:nth-child(3) {
+  color: #008000;
+}
+
+.product-table-items button {
+  width: 80px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  color: #FFF;
+  font-size: 16px;
+  font-family: Nunito;
+  font-weight: 700;
+  background: #4377FC;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.product-table-items button:active {
+  position: relative;
+  top: 2px;
+}
+
+.disabled-btn {
+  cursor: not-allowed!important;
+  background: #797979!important;
+}
+
+.disabled-btn:active {
+  position: relative!important;
+  top: 0!important;
+}
+
+
+
+.overlay {
+  background: #000;
+  height: 100vh;
+  left: 0;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #333;
+  min-width: 60%;
+  position: fixed;
+  left: 50%;
+  padding: 24px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.modal h2 {
+  font-family: Nunito, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
+.modal label {
+  font-size: 16px;
+  font-family: Nunito;
+  font-weight: 700;
+  height: 50px;
+  margin: 30px;
+  margin-left: 0;
+  width: 180px;
+}
+
+.modal input {
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.modal select {
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-modal-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
+}
+
+.modal button {
+  width: 120px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  color: #FFF;
+  font-size: 24px;
+  font-family: Nunito;
+  font-weight: 700;
+  background: #4377FC;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-modal-div button:last-child {
+  background: red;
+}
+
+.btn-modal:active {
+  position: relative;
+  top: 2px;
+}
